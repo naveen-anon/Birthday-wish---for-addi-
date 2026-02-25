@@ -1,0 +1,82 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    height: 100vh;
+    background: linear-gradient(270deg, #000000, #0f0c29, #302b63, #24243e);
+    background-size: 600% 600%;
+    animation: bgAnimation 10s ease infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    color: white;
+    text-align: center;
+}
+
+@keyframes bgAnimation {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+}
+
+.container {
+    z-index: 2;
+}
+
+.neon-text {
+    font-size: 60px;
+    text-shadow:
+        0 0 5px #ff00ff,
+        0 0 10px #ff00ff,
+        0 0 20px #ff00ff,
+        0 0 40px #00ffff,
+        0 0 80px #00ffff;
+    animation: glow 1.5s infinite alternate;
+}
+
+@keyframes glow {
+    from { text-shadow: 0 0 10px #ff00ff, 0 0 20px #00ffff; }
+    to { text-shadow: 0 0 20px #00ffff, 0 0 40px #ff00ff; }
+}
+
+.subtitle {
+    margin-top: 20px;
+    font-size: 20px;
+    opacity: 0;
+    animation: fadeIn 3s forwards;
+}
+
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
+
+button {
+    margin-top: 30px;
+    padding: 15px 30px;
+    font-size: 18px;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    background: linear-gradient(45deg, #ff00ff, #00ffff);
+    color: white;
+    transition: 0.4s;
+    box-shadow: 0 0 20px #00ffff;
+}
+
+button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 40px #ff00ff;
+}
+
+/* Confetti canvas */
+canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+        }
